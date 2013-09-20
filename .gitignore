@@ -15,3 +15,4 @@ dist
 /.settings
 oo
 .target
+bin
