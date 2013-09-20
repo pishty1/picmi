@@ -6,6 +6,7 @@ import play.api.data.Form
 import play.api.data.Forms._
 import models.Task
 import play.api.libs.json.Json
+import views.html._
 
 object Application extends Controller {
 
@@ -33,6 +34,10 @@ object Application extends Controller {
   def deleteTask(id: Long) = Action {
     Task.delete(id)
     Redirect(routes.Application.tasks)
+  }
+  
+  def listallTasks() = Action {
+    Ok(listall.render())
   }
 
   val taskForm = Form(
